@@ -24,7 +24,7 @@ export async function login(values: z.infer<typeof loginFormSchema>) {
     console.log(validatedValues);
 
     // 2.) check if  user with the  rollno or username  exist
-    const filepath = path.join(__dirname, "../../../../../lib/users.json");
+    const filepath = path.join(process.cwd(),"/lib/users.json");
     console.log(filepath);
     const existingUsers = await readFile(filepath, "utf-8");
     console.log(JSON.parse(existingUsers));

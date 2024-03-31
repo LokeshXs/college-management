@@ -6,6 +6,7 @@ import {
   createTeacherSchema,
   createStudentSchema,
 } from "@/lib/validationSchemas";
+import * as data from "@/lib/users.json";
 
 export async function teacherSignup(
   values: z.infer<typeof createTeacherSchema>
@@ -21,11 +22,12 @@ export async function teacherSignup(
       };
     }
 
-    console.log(validatedValues);
 
     // 2.) check if any user with the same mail id or username already exist
-    const filepath = path.join(__dirname, "../../../../../../lib/users.json");
+    // const filepath = path.join(__filename, "../../../../../../lib/users.json");
+    const filepath = path.join(process.cwd(),"/lib/users.json");
     console.log(filepath);
+    // const filepath = data;
     const existingUsers = await readFile(filepath, "utf-8");
     console.log(JSON.parse(existingUsers));
     const parsedJSON: z.infer<typeof createTeacherSchema>[] =
@@ -84,7 +86,7 @@ export async function studentSignup(
     console.log(validatedValues);
 
     // 2.) check if any user with the same mail id or username already exist
-    const filepath = path.join(__dirname, "../../../../../../lib/users.json");
+    const filepath = path.join(process.cwd(),"/lib/users.json");
     console.log(filepath);
     const existingUsers = await readFile(filepath, "utf-8");
     console.log(JSON.parse(existingUsers));
