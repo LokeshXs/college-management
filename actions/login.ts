@@ -8,6 +8,7 @@ import {
   createTeacherSchema,
   loginFormSchema,
 } from "@/lib/validationSchemas";
+import {USERS} from "@/lib/data";
 
 export async function login(values: z.infer<typeof loginFormSchema>) {
   try {
@@ -24,14 +25,16 @@ export async function login(values: z.infer<typeof loginFormSchema>) {
     console.log(validatedValues);
 
     // 2.) check if  user with the  rollno or username  exist
-    const filepath = path.join(process.cwd(),"/lib/users.json");
-    console.log(filepath);
-    const existingUsers = await readFile(filepath, "utf-8");
-    console.log(JSON.parse(existingUsers));
-    const parsedJSON: (
-      | z.infer<typeof createTeacherSchema>
-      | z.infer<typeof createStudentSchema>
-    )[] = JSON.parse(existingUsers);
+    // const filepath = path.join(process.cwd(),"/lib/users.json");
+    // console.log(filepath);
+    // const existingUsers = await readFile(filepath, "utf-8");
+    // console.log(JSON.parse(existingUsers));
+    // const parsedJSON: (
+    //   | z.infer<typeof createTeacherSchema>
+    //   | z.infer<typeof createStudentSchema>
+    // )[] = JSON.parse(existingUsers);
+
+    const parsedJSON = USERS;
 
     const user = parsedJSON.filter((user) => {
       if (user.role === "TEACHER") {

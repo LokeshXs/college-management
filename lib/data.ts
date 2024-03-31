@@ -1,3 +1,6 @@
+import { z } from "zod";
+import { createStudentSchema, createTeacherSchema } from "./validationSchemas";
+
 export const AccountTypes = [
   {
     id: "acc1",
@@ -42,3 +45,5 @@ export const TeachersDepartment = [
     name: "Physics(PHY)",
   },
 ];
+
+export const USERS:any[] = [];

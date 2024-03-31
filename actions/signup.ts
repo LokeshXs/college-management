@@ -6,7 +6,7 @@ import {
   createTeacherSchema,
   createStudentSchema,
 } from "@/lib/validationSchemas";
-import * as data from "@/lib/users.json";
+import {USERS} from "@/lib/data";
 
 export async function teacherSignup(
   values: z.infer<typeof createTeacherSchema>
@@ -25,23 +25,26 @@ export async function teacherSignup(
 
     // 2.) check if any user with the same mail id or username already exist
     // const filepath = path.join(__filename, "../../../../../../lib/users.json");
-    const filepath = path.join(process.cwd(),"/lib/users.json");
-    console.log(filepath);
-    // const filepath = data;
-    const existingUsers = await readFile(filepath, "utf-8");
-    console.log(JSON.parse(existingUsers));
-    const parsedJSON: z.infer<typeof createTeacherSchema>[] =
-      JSON.parse(existingUsers);
+    // const filepath = path.join(process.cwd(),"/lib/users.json");
+    // console.log(filepath);
+    // // const filepath = data;
+    // const existingUsers = await readFile(filepath, "utf-8");
+    // console.log(JSON.parse(existingUsers));
+    // const parsedJSON: z.infer<typeof createTeacherSchema>[] =
+    //   JSON.parse(existingUsers);
+
+    const parsedJSON = USERS;
 
     for (let user = 0; user < parsedJSON.length; user++) {
       console.log(parsedJSON[user].email);
-      console.log(parsedJSON[user].username);
+    
       // if (parsedJSON[user]?.email === validatedValues.data.email) {
       //   return {
       //     status: "error",
       //     message: "User with email already exist",
       //   };
       // }
+      
       if (parsedJSON[user]?.username === validatedValues.data.username) {
         return {
           status: "error",
@@ -55,7 +58,7 @@ export async function teacherSignup(
     const newUsers = parsedJSON.push(validatedValues.data);
     console.log(parsedJSON);
 
-    const write = await writeFile(filepath, JSON.stringify(parsedJSON));
+    // const write = await writeFile(filepath, JSON.stringify(parsedJSON));
 
     return {
       status: "success",
@@ -86,13 +89,15 @@ export async function studentSignup(
     console.log(validatedValues);
 
     // 2.) check if any user with the same mail id or username already exist
-    const filepath = path.join(process.cwd(),"/lib/users.json");
-    console.log(filepath);
-    const existingUsers = await readFile(filepath, "utf-8");
-    console.log(JSON.parse(existingUsers));
-    const parsedJSON: z.infer<typeof createStudentSchema>[] =
-      JSON.parse(existingUsers);
+    // const filepath = path.join(process.cwd(),"/lib/users.json");
+    // console.log(filepath);
+    // const existingUsers = await readFile(filepath, "utf-8");
+    // console.log(JSON.parse(existingUsers));
+    // const parsedJSON: z.infer<typeof createStudentSchema>[] =
+    //   JSON.parse(existingUsers);
 
+
+    const parsedJSON = USERS;
     for (let user = 0; user < parsedJSON.length; user++) {
       console.log(parsedJSON[user].email);
       console.log(parsedJSON[user].role);
@@ -115,7 +120,7 @@ export async function studentSignup(
     const newUsers = parsedJSON.push(validatedValues.data);
     console.log(parsedJSON);
 
-    const write = await writeFile(filepath, JSON.stringify(parsedJSON));
+    // const write = await writeFile(filepath, JSON.stringify(parsedJSON));
 
     return {
       status: "success",
