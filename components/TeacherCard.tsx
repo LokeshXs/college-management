@@ -21,7 +21,7 @@ type TeacherCardType = {
 
 export default function TeacherCard({name,image}:TeacherCardType) {
   return (
-    <Link href={`/`}>
+    <Link href={`/dashboard/timetable/CSE/schedule`}>
       <Card className="w-[300px] max-lg:w-[240px] max-md:w-[300px] max-sm:w-full   border-2  hover:border-primary  hover:shadow-md hover:-translate-y-1 transition-all duration-[3000] h-full flex-1">
         <CardHeader>
           <CardTitle className="text-xl text-center"> {name}</CardTitle>

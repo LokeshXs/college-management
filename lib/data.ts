@@ -51,7 +51,8 @@ export const TEACHERS = [
   {
       id: 1,
       name: "John Smith",
-      image: "https://randomuser.me/api/portraits/men/1.jpg"
+      image: "https://randomuser.me/api/portraits/men/1.jpg",
+    
   },
   {
       id: 2,
