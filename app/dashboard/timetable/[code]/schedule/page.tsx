@@ -1,99 +1,96 @@
 "use client";
 
-import {
-  Calendar,
-  Views,
-  DateLocalizer,
-  dateFnsLocalizer,
-  Event,
-} from "react-big-calendar";
-import "react-big-calendar/lib/css/react-big-calendar.css";
-import format from "date-fns/format";
-import parse from "date-fns/parse";
-import startOfWeek from "date-fns/startOfWeek";
-import getDay from "date-fns/getDay";
-import enUS from "date-fns/locale/en-US";
-import React, { useMemo } from "react";
-import * as dates from "@/lib/dates";
+import { FC, useState } from 'react'
+import { Calendar, dateFnsLocalizer, Event, View } from 'react-big-calendar'
+import withDragAndDrop, { withDragAndDropProps } from 'react-big-calendar/lib/addons/dragAndDrop'
+import format from 'date-fns/format'
+import parse from 'date-fns/parse'
+import startOfWeek from 'date-fns/startOfWeek'
+import getDay from 'date-fns/getDay'
+import enUS from 'date-fns/locale/en-US'
+import {addHours} from 'date-fns'
+import {startOfHour} from 'date-fns'
+import 'react-big-calendar/lib/addons/dragAndDrop/styles.css'
+import 'react-big-calendar/lib/css/react-big-calendar.css'
+
+const App: FC = () => {
+  const [events, setEvents] = useState<Event[]>([
+    {
+      title: 'Topic',
+      start:new Date(2024, 3, 1),
+      end:new Date(2024, 3, 1),
+    },
+    {
+      title: 'Project',
+      start:new Date(2024, 3, 6),
+      end:new Date(2024, 3, 8),
+    },
+    {
+      title: 'Reports',
+      start,
+      end,
+    },
+    {
+      title: 'Class',
+      start:new Date(2024, 3, 12),
+      end:new Date(2024, 3, 12),
+    },
+  ])
+
+  const [view,setView] = useState<View>("month");
+
+  const onEventResize: withDragAndDropProps['onEventResize'] = data => {
+    const { start, end } = data
+
+    setEvents(currentEvents => {
+      const firstEvent = {
+        start: new Date(start),
+        end: new Date(end),
+      }
+      return [...currentEvents, firstEvent]
+    })
+  }
+
+  const onEventDrop: withDragAndDropProps['onEventDrop'] = data => {
+    console.log(data)
+  }
+
+  return (
+    <main className='overflow-x-scroll'>
+<div className='min-w-[600px] w-full'>
+
+    <DnDCalendar
+      defaultView={view}
+      view={view}
+      onView={(view)=>{setView(view)}}
+      events={events}
+      localizer={localizer}
+      onEventDrop={onEventDrop}
+      onEventResize={onEventResize}
+      resizable
+      style={{ height: '100vh' }}
+      />
+      </div>
+      </main>
+  )
+}
 
 const locales = {
-  "en-US": enUS,
-};
-
+  'en-US': enUS,
+}
+const endOfHour = (date: Date): Date => addHours(startOfHour(date), 1)
+const now = new Date()
+const start = endOfHour(now)
+const end = addHours(start, 2)
+// The types here are `object`. Strongly consider making them better as removing `locales` caused a fatal error
 const localizer = dateFnsLocalizer({
   format,
   parse,
   startOfWeek,
   getDay,
   locales,
-});
+})
+//@ts-ignore
+const DnDCalendar = withDragAndDrop(Calendar)
 
-const myEventsList: Event[] = [
-  {
-    id: 1,
-    title: "Class",
-    start: new Date(2024, 3, 1),
-    end: new Date(2024, 3, 2),
-  },
-
-  {
-    id: 2,
-    title: "Class",
-    start: new Date(2024, 3, 1),
-    end: new Date(2024, 3, 2),
-  },
-
-  {
-    id: 3,
-    title: "Class",
-    start: new Date(2024, 3, 2),
-    end: new Date(2024, 3, 2),
-  },
-  {
-    id: 3,
-    title: "Class",
-    start: new Date(2024, 3, 5),
-    end: new Date(2024, 3, 7),
-  },
-];
-
-const ColoredDateCellWrapper = ({ children }: { children: any }) =>
-  React.cloneElement(React.Children.only(children), {
-    style: {
-      backgroundColor: "lightblue",
-    },
-  });
-
-export default function Schedule() {
-  const { components, defaultDate, max, views } = useMemo(
-    () => ({
-      components: {
-        timeSlotWrapper: ColoredDateCellWrapper,
-      },
-      defaultDate: new Date(),
-      max: dates.add(dates.endOf(new Date(2024, 4, 31), "day"), -1, "hours"),
-      views: Object.keys(Views).map((k) => Views[k]),
-    }),
-    []
-  );
-
-  return (
-    <main className="overflow-y-scroll min-h-screen  flex justify-start items-center">
-      <div className="min-w-[800px] w-full ">
-        <Calendar
-          components={components}
-          localizer={localizer}
-          events={myEventsList}
-          startAccessor="start"
-          endAccessor="end"
-          style={{ height: 500 }}
-          views={views}
-          step={60}
-          defaultDate={defaultDate}
-          max={max}
-          showMultiDayTimes
-        />
-      </div>
-    </main>
-  );
-}
+export default App
