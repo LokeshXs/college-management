@@ -45,7 +45,7 @@ export default function SigninForm() {
         console.log(res);
         if (res?.status === "success") {
           console.log(res?.data);
-          router.push("/dashboard");
+          router.push("/dashboard/timetable");
         }
 
         if (res?.status === "error") {
