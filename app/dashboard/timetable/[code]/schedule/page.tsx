@@ -56,7 +56,7 @@ const App: FC = () => {
   }
 
   return (
-    <main className='overflow-x-scroll'>
+    <main className='overflow-x-scroll p-4 max-sm:pb-20'>
 <div className='min-w-[600px] w-full'>
 
     <DnDCalendar

@@ -3,7 +3,7 @@ import { TEACHERS } from "@/lib/data";
 
 export default function SubjectTeachers() {
   return (
-    <main className="text-2xl">
+    <main className="p-4 max-sm:pb-20">
       <div className="flex flex-wrap max-md:justify-center  items-stretch gap-12 max-lg:gap-8 w-full max-sm:flex-col   ">
         {TEACHERS.map((teacherObj) => (
           
