@@ -101,7 +101,7 @@ export default function ChatPage() {
             />
           </div>
         </div>
-        <div className="w-full flex justify-center p-8 max-sm:py-6 max-sm:px-4 max-md:mb-12   z-20 self-end">
+        <div className="w-full flex justify-center p-8 max-sm:py-6 max-sm:px-4 max-md:mb-12   z-2 self-end">
           <form
             onSubmit={(e) => {
               e.preventDefault();
