@@ -11,6 +11,7 @@ import {
   MessageCircleQuestion,
   LandPlot,
 } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
 
 export default function ChatPage() {
@@ -19,23 +20,26 @@ export default function ChatPage() {
   );
 
   return (
-    <main className="h-full  flex flex-col">
+    <main className="h-full  flex flex-col bg-white">
       <div className="flex-1 flex flex-col overflow-x-hidden z-8">
         <div className="flex-1 h-full  flex overflow-hidden">
           <div
             id="infinite-scroll"
-            className="overflow-y-scroll h-full w-full bg-muted mx-4 mt-4 rounded-2xl flex flex-col items-center justify-start"
+            className="overflow-y-scroll h-full w-full bg-muted mx-4 mt-4 rounded-2xl flex flex-col items-center justify-start relative"
           >
             <div
-              className={clsx("max-w-[800px] w-full flex flex-col p-8 max-sm:p-4 gap-12 max-sm:gap-8", {
-                hidden: messages.length !== 0,
-              })}
+              className={clsx(
+                "max-w-[800px] w-full flex flex-col p-8 max-sm:p-4 gap-12 max-sm:gap-8",
+                {
+                  hidden: messages.length !== 0,
+                }
+              )}
             >
-              <h1 className="text-7xl max-md:text-6xl max-sm:text-5xl font-semibold">
+              <h1 className="text-7xl max-md:text-6xl max-sm:text-5xl font-semibold text-primary">
                 Ask your,
                 <br /> Doubts{" "}
               </h1>
-              <div className="flex gap-4 justify-center max-sm:flex-wrap ">
+              <div className="flex gap-4 justify-center max-sm:flex-wrap z-10 ">
                 <Card className="flex flex-col justify-between max-w-xs w-full">
                   <CardContent className="text-sm p-2">
                     When is the project submission deadline?
@@ -72,13 +76,29 @@ export default function ChatPage() {
             </div>
 
             <div
-              className={clsx("max-w-[800px] w-full flex-1 flex flex-col p-8 gap-6 justify-end ")}
+              className={clsx(
+                "max-w-[800px] w-full flex-1 flex flex-col p-8 gap-6 justify-end "
+              )}
             >
               {messages.map((msg, index) => (
-                <div key={index} className="bg-primary w-fit py-1 px-4 rounded-md text-muted rounded-br-none self-end max-w-[70%] max-sm:max-w-[90%] overflow-wrap break-words text-left">{msg.message}</div>
+                <div
+                  key={index}
+                  className="bg-primary w-fit py-1 px-4 rounded-md text-muted rounded-br-none self-end max-w-[70%] max-sm:max-w-[90%] overflow-wrap break-words text-left"
+                >
+                  {msg.message}
+                </div>
               ))}
-              
             </div>
+
+            <Image
+              src="/chat.svg"
+              className={clsx("absolute bottom-0 right-0 opacity-60", {
+                hidden: messages.length !== 0,
+              })}
+              width={800}
+              height={800}
+              alt="chat"
+            />
           </div>
         </div>
         <div className="w-full flex justify-center p-8 max-sm:py-6 max-sm:px-4 max-md:mb-12   z-20 self-end">

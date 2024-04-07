@@ -13,27 +13,23 @@ import {startOfHour} from 'date-fns'
 import 'react-big-calendar/lib/addons/dragAndDrop/styles.css'
 import 'react-big-calendar/lib/css/react-big-calendar.css'
 
-const App: FC = () => {
+const TheaterAvailability: FC = () => {
   const [events, setEvents] = useState<Event[]>([
+    
     {
-      title: 'Topic',
-      start:new Date(2024, 3, 1),
-      end:new Date(2024, 3, 1),
-    },
-    {
-      title: 'Project',
-      start:new Date(2024, 3, 6),
-      end:new Date(2024, 3, 8),
-    },
-    {
-      title: 'Reports',
+      title: 'Physics',
       start,
       end,
     },
     {
-      title: 'Class',
-      start:new Date(2024, 3, 12),
-      end:new Date(2024, 3, 12),
+      title: 'Chemistry',
+      start: addHours(start , 4),
+      end : addHours(start , 6),
+    },
+    {
+      title: 'Computer Science',
+      start: addHours(start , 12),
+      end : addHours(start , 13),
     },
   ])
 
@@ -56,12 +52,12 @@ const App: FC = () => {
   }
 
   return (
-    <main className='overflow-x-scroll p-4 max-sm:pb-20 bg-white'>
-<div className='min-w-[600px] w-full '>
+    <main className='overflow-x-auto p-4 max-sm:pb-20'>
+<div className='min-w-[600px] w-full'>
 
     <DnDCalendar
       defaultView={view}
-      view={view}
+      view="day"
       onView={(view)=>{setView(view)}}
       events={events}
       localizer={localizer}
@@ -93,4 +89,4 @@ const localizer = dateFnsLocalizer({
 //@ts-ignore
 const DnDCalendar = withDragAndDrop(Calendar)
 
-export default App
+export default TheaterAvailability

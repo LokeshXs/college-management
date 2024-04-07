@@ -12,14 +12,12 @@ export default async function DashboardLayout({ children }: Props) {
 
       <div className="flex-1 h-full flex">
       <nav className="w-60 p-4  h-full bg-muted max-md:hidden ">
-        <div className="h-32 bg-primary rounded-sm flex items-center justify-center">
-          <p className="text-6xl font-bold text-muted">SDS </p>
-        </div>
+       
 
-        <div className="mt-4 flex flex-col gap-2">
+        <div className="mt-12 flex flex-col gap-2">
           <DashboardLink href="/dashboard/timetable">Time Table</DashboardLink>
           <DashboardLink href="/dashboard/chat">Chat</DashboardLink>
-          <DashboardLink href="/dashboard/createuser">
+          <DashboardLink href="/dashboard/leacturetheater">
             LT Availability
           </DashboardLink>
         </div>
@@ -30,8 +28,12 @@ export default async function DashboardLayout({ children }: Props) {
         <div className="py-6 bg-muted">
 
         </div>
-        <div className="flex-1  overflow-auto ">
+        <div className="flex-1  overflow-auto  ">
+          <div className="w-full h-full z-10">
+
           {children}
+          </div>
+         
         </div>
 
       </div>
@@ -64,6 +66,10 @@ export default async function DashboardLayout({ children }: Props) {
       </div>
      
       </div> */}
+       <div className="dark:bg-black bg-white  dark:bg-dot-white/[0.2] bg-dot-black/[0.2] absolute w-full h-full top-0 z-[-1] ">
+
+<div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] z-[-1]"></div>
+</div>
     </main>
   );
 }
