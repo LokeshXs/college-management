@@ -20,12 +20,12 @@ export default function ChatPage() {
   );
 
   return (
-    <main className="h-full  flex flex-col bg-white">
+    <main className="h-full  flex flex-col bg-white ">
       <div className="flex-1 flex flex-col overflow-x-hidden z-8">
-        <div className="flex-1 h-full  flex overflow-hidden">
+        <div className="flex-1 h-full  flex overflow-hidden relative ">
           <div
             id="infinite-scroll"
-            className="overflow-y-scroll h-full w-full bg-muted mx-4 mt-4 rounded-2xl flex flex-col items-center justify-start relative"
+            className="overflow-y-scroll h-full w-full bg-muted mx-4 max-sm:mx-0  mt-4 max-sm:mt-0 rounded-2xl flex flex-col items-center justify-start "
           >
             <div
               className={clsx(
@@ -92,7 +92,7 @@ export default function ChatPage() {
 
             <Image
               src="/chat.svg"
-              className={clsx("absolute bottom-0 right-0 opacity-60", {
+              className={clsx("absolute bottom-0 right-0 opacity-60 ", {
                 hidden: messages.length !== 0,
               })}
               width={800}
