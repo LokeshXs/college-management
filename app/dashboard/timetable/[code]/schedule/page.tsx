@@ -16,22 +16,22 @@ import 'react-big-calendar/lib/css/react-big-calendar.css'
 const App: FC = () => {
   const [events, setEvents] = useState<Event[]>([
     {
-      title: 'Topic',
+      title: 'Busy',
       start:new Date(2024, 3, 1),
       end:new Date(2024, 3, 1),
     },
     {
-      title: 'Project',
+      title: 'Busy',
       start:new Date(2024, 3, 6),
       end:new Date(2024, 3, 8),
     },
     {
-      title: 'Reports',
+      title: 'Busy',
       start,
       end,
     },
     {
-      title: 'Class',
+      title: 'Busy',
       start:new Date(2024, 3, 12),
       end:new Date(2024, 3, 12),
     },

@@ -66,6 +66,7 @@ export async function login(values: z.infer<typeof loginFormSchema>) {
     // 3) return the user and redirect to dashboard page but remove password
 
     const { password, ...userdetails } = user[0];
+    // console.log(userdetails);
 
     return {
       status: "success",

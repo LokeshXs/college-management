@@ -1,11 +1,13 @@
 import TheaterAvailability from "@/components/TheaterAvailability";
 import Image from "next/image";
 
-export default function TheaterInfoPage(){
+export default function TheaterInfoPage({params}){
+
+ 
 
  return(
   <main className="p-4 max-sm:pb-20 space-y-12 max-sm:space-y-6 min-h-screen flex flex-col   ">
-    <h1 className="text-5xl max-sm:text-4xl max-sm:text-center text-primary">Nexus Auditorium</h1>
+    <h1 className="text-5xl max-sm:text-4xl max-sm:text-center text-primary">{params.theaterid.toUpperCase()}</h1>
 
     <div className="flex max-xl:flex-col-reverse gap-6 items-center flex-1 ">
       <div className="flex-[2] bg-muted rounded-2xl  max-xl:w-full ">

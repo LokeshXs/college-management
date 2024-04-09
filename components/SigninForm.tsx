@@ -21,6 +21,8 @@ import FormSuccessComponent from "./FormSuccessComponent.";
 import { Eye, EyeOff } from "lucide-react";
 import { login } from "@/actions/login";
 import { useRouter } from "next/navigation";
+import { useContext } from "react";
+import { AuthContext } from "@/providers/AuthProvider";
 
 export default function SigninForm() {
   const form = useForm<z.infer<typeof loginFormSchema>>({
@@ -35,6 +37,7 @@ export default function SigninForm() {
   const [success, setSuccess] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const router = useRouter();
+  const { setId, setRole } = useContext(AuthContext);
 
   const onSubmit = (values: z.infer<typeof loginFormSchema>) => {
     setError("");
@@ -42,7 +45,7 @@ export default function SigninForm() {
     setShowPassword(false);
     startTransition(() => {
       login(values).then((res) => {
-        console.log(res);
+        console.log("Response", res);
         if (res?.status === "success") {
           console.log(res?.data);
           router.push("/dashboard/timetable");
@@ -51,6 +54,9 @@ export default function SigninForm() {
         if (res?.status === "error") {
           setError(res.message);
         }
+
+        setRole(res.data?.userdetails.role);
+        setId(res.data?.userdetails.username || res.data?.userdetails.rollno);
       });
     });
   };

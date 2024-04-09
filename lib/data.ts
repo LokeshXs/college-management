@@ -50,56 +50,75 @@ export const TeachersDepartment = [
 export const TEACHERS = [
   {
       id: 1,
-      name: "John Smith",
+      name: "Dr. Manish Garg",
       image: "https://randomuser.me/api/portraits/men/1.jpg",
     
   },
   {
       id: 2,
-      name: "Emily Johnson",
+      name: "Dr. Vaibhav Kumar Gupta",
       image: "https://randomuser.me/api/portraits/women/2.jpg"
   },
   {
       id: 3,
-      name: "Michael Williams",
+      name: "Dr. Priyanka Gupta",
       image: "https://randomuser.me/api/portraits/men/3.jpg"
   },
   {
       id: 4,
-      name: "Jessica Brown",
+      name: "Dr. Harsh Chandrakant Trivedi",
       image: "https://randomuser.me/api/portraits/women/4.jpg"
-  },
-  {
-      id: 5,
-      name: "David Jones",
-      image: "https://randomuser.me/api/portraits/men/5.jpg"
-  },
-  {
-      id: 6,
-      name: "Sarah Miller",
-      image: "https://randomuser.me/api/portraits/women/6.jpg"
-  },
-  {
-      id: 7,
-      name: "Christopher Wilson",
-      image: "https://randomuser.me/api/portraits/men/7.jpg"
-  },
-  {
-      id: 8,
-      name: "Amanda Davis",
-      image: "https://randomuser.me/api/portraits/women/8.jpg"
-  },
-  {
-      id: 9,
-      name: "James Taylor",
-      image: "https://randomuser.me/api/portraits/men/9.jpg"
-  },
-  {
-      id: 10,
-      name: "Rachel Moore",
-      image: "https://randomuser.me/api/portraits/women/10.jpg"
   }
 ];
+
+
+export const LT_INFO=[
+  {
+    id:'LT1',
+    name:"LT1",
+    location:"Main Academic building"
+  },
+  {
+    id:'LT2',
+    name:"LT2",
+    location:"Main Academic building"
+  },
+  {
+    id:'LT3',
+    name:"LT3",
+    location:"Main Academic building"
+  },
+  {
+    id:'LT4',
+    name:"LT4",
+    location:"Main Academic building"
+  },
+  {
+    id:'LT5',
+    name:"LT5",
+    location:"Main Academic building"
+  },
+  {
+    id:'LT6',
+    name:"LT6",
+    location:"Main Academic building"
+  },
+  {
+    id:'LT7',
+    name:"LT7",
+    location:"Main Academic building"
+  },
+  {
+    id:'LT8',
+    name:"LT8",
+    location:"Main Academic building"
+  },
+  {
+    id:'LT9',
+    name:"LT9",
+    location:"Main Academic building"
+  },
+]
 
 export const USERS:any[] = [
   {
@@ -116,3 +135,5 @@ export const USERS:any[] = [
     role:"STUDENT"
   },
 ];
+
+
