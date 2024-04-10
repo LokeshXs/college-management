@@ -13,9 +13,11 @@ export default function NavBar() {
       <Image src="/logo.svg" alt="Logo" width={60} height={60} />
 
       <ul className="flex items-center gap-4">
-        <li>
+        {
+          id !== ""?<li>
           <Link href="/dashboard/timetable" className="font-semibold text-lg text-primary max-sm:text-base max-sm:font-medium ">Home</Link>
-        </li>
+        </li>:""
+        }
         {id === "" ? (
           <li>
             <Button asChild>
