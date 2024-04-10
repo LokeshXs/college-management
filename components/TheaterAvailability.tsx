@@ -65,6 +65,7 @@ const TheaterAvailability: FC = () => {
       onEventResize={onEventResize}
       resizable
       style={{ height: '100vh' }}
+      views={['day']}
       />
       </div>
       </main>

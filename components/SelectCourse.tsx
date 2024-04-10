@@ -19,18 +19,19 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Check } from "lucide-react";
-import { TEACHERS } from "@/lib/data";
+import { TEACHERS, TeachersDepartment } from "@/lib/data";
 import { useContext } from "react";
 import { ChatContext } from "@/providers/ChatProvider";
 import { v4 as uuid } from "uuid";
 
-export function ComboboxDemo() {
+
+export function SelectCourse() {
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState("");
-  const { setSessionId, setChatName } = useContext(ChatContext);
+  // const { setSessionId, setChatName } = useContext(ChatContext);
 
   return (
-    <Popover open={open} onOpenChange={setOpen}>
+    <Popover open={open} onOpenChange={setOpen} >
       <PopoverTrigger asChild className="text-primary hover:text-primary">
         <Button
           variant="outline"
@@ -39,8 +40,9 @@ export function ComboboxDemo() {
           className="min-w-[400px] max-w-[500px] max-sm:min-w-[300px] justify-between"
         >
           {value
-            ? TEACHERS.find((teacher) => teacher.name.toLowerCase() === value)
-                ?.name
+            ? TeachersDepartment.find(
+                (teacher) => teacher.name.toLowerCase() === value
+              )?.name
             : "Select teacher..."}
           <CaretSortIcon className="ml-2 h-4  shrink-0 opacity-50" />
         </Button>
@@ -49,22 +51,22 @@ export function ComboboxDemo() {
         <Command>
           <CommandInput placeholder="Search Teacher ..." className="h-9" />
           <CommandList>
-            <CommandEmpty>No teachers found.</CommandEmpty>
+            <CommandEmpty>No selectValues found.</CommandEmpty>
 
-            <CommandGroup className="text-primary">
-              {TEACHERS.map((teacher, index) => (
+            <CommandGroup className="text-primary ">
+              {TeachersDepartment.map((teacher, index) => (
                 <CommandItem
                   key={index}
                   value={teacher.name.toLowerCase()}
                   onSelect={(currentValue) => {
-
                     setValue(currentValue === value ? "" : currentValue);
-                    setChatName(currentValue);
-                    setSessionId(uuid())
-                  
+                    // setChatName(currentValue);
+                    // setSessionId(uuid());
+
                     setOpen(false);
-                  }} 
-                  className="hover:bg-muted"
+                  }}
+
+                  className="hover:text-muted hover:bg-muted "
                 >
                   <Check
                     className={cn(

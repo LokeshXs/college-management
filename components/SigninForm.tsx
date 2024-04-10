@@ -62,8 +62,8 @@ export default function SigninForm() {
   };
 
   return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8  ">
+    <Form {...form} >
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 text-primary ">
         <FormField
           control={form.control}
           name="userid"
@@ -138,7 +138,7 @@ export default function SigninForm() {
         <FormSuccessComponent successMessage={success} />
       </form>
 
-      <p className="text-center mt-4">
+      <p className="text-center mt-4 text-primary">
         Forgot Password?{" "}
         <Button
           size="default"
@@ -146,7 +146,7 @@ export default function SigninForm() {
           asChild={true}
           className="p-0 font-normal "
         >
-          <Link href="/reset-password">Click here</Link>
+          <Link href="/">Click here</Link>
         </Button>
       </p>
     </Form>

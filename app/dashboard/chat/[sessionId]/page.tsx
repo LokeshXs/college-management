@@ -47,7 +47,7 @@ export default function ChatPage() {
                 <br /> Doubts{" "}
               </h1>
               <div className="flex gap-4 justify-center max-sm:flex-wrap z-10 ">
-                <Card className="flex flex-col justify-between max-w-xs w-full">
+                <Card className="flex flex-col justify-between max-w-xs w-full text-primary">
                   <CardContent className="text-sm p-2">
                     When is the project submission deadline?
                   </CardContent>
@@ -55,7 +55,7 @@ export default function ChatPage() {
                     <SquareGanttChart />
                   </CardFooter>
                 </Card>
-                <Card className="flex flex-col justify-between max-w-xs w-full">
+                <Card className="flex flex-col justify-between max-w-xs w-full text-primary">
                   <CardContent className="text-sm p-2">
                     When will be the exams?
                   </CardContent>
@@ -63,7 +63,7 @@ export default function ChatPage() {
                     <BookCheck />
                   </CardFooter>
                 </Card>
-                <Card className="flex flex-col justify-between max-w-xs w-full">
+                <Card className="flex flex-col justify-between max-w-xs w-full text-primary">
                   <CardContent className="text-sm p-2">
                     How to solve this question?
                   </CardContent>
@@ -71,7 +71,7 @@ export default function ChatPage() {
                     <MessageCircleQuestion />
                   </CardFooter>
                 </Card>
-                <Card className="flex flex-col justify-between max-w-xs w-full">
+                <Card className="flex flex-col justify-between max-w-xs w-full text-primary">
                   <CardContent className="text-sm p-2">
                     How to apply for the placements?
                   </CardContent>

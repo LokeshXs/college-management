@@ -14,9 +14,9 @@ export default function DashboardLink({ href,children }: Props) {
   return (
     <Link
       href={href}
-      className={clsx("p-2   rounded-sm font-medium ", {
-        "bg-primary/20 text-primary hover:bg-primary/20": pathname.includes(href),
-        "hover:bg-gray-200/50": pathname !== href,
+      className={clsx("p-2 flex gap-4    rounded-sm font-medium  ", {
+        "bg-muted text-primary hover:bg-muted": pathname.includes(href),
+        "hover:bg-muted/20  text-muted ": pathname !== href,
       })}
     >
       {children}

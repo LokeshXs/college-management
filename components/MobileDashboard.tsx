@@ -1,14 +1,14 @@
-import { FilePieChart,TextSearch ,UserPlus ,ShieldPlus  } from 'lucide-react';
+import {  CalendarClock, MessageCircleQuestion, School  } from 'lucide-react';
 import DashboardLink from "./DashboardLink";
 
 export default function MobileDashboard() {
   return (
    <nav className='fixed bottom-2 w-full flex justify-center z-10 md:hidden '>
-      <div className="mt-4 flex  gap-12 max-sm:gap-8 bg-muted py-2 px-8 rounded-2xl max-w-full z-20 ">
-          <DashboardLink href="/dashboard/timetable"><FilePieChart /></DashboardLink>
-          <DashboardLink href="/dashboard/chat"><TextSearch /></DashboardLink>
+      <div className="mt-4 flex  gap-12 max-sm:gap-8 bg-primary py-2 px-8 rounded-2xl max-w-full z-20 ">
+          <DashboardLink href="/dashboard/timetable"><CalendarClock /></DashboardLink>
+          <DashboardLink href="/dashboard/chat"> <MessageCircleQuestion /></DashboardLink>
           <DashboardLink href="/dashboard/leacturetheater">
-            <UserPlus />
+          <School />
           </DashboardLink>
           
         </div>

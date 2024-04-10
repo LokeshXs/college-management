@@ -26,9 +26,9 @@ export default function AccountCard({
   return (
     <Link href={accountSignupLink} >
       <Card className="w-[300px] max-md:w-[220px] border-2  hover:border-primary  hover:shadow-md hover:-translate-y-1 transition-all duration-[3000]">
-        <CardHeader>
-          <CardTitle className="text-xl">{accountType}</CardTitle>
-          <CardDescription>{accountTypeDescription}</CardDescription>
+        <CardHeader >
+          <CardTitle className="text-xl text-primary">{accountType}</CardTitle>
+          <CardDescription className="text-muted-foreground">{accountTypeDescription}</CardDescription>
         </CardHeader>
         <CardContent className="flex justify-center">
           <Image

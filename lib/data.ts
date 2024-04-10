@@ -44,6 +44,11 @@ export const TeachersDepartment = [
     selectId: "PHY",
     name: "Physics(PHY)",
   },
+  {
+    id: "dep6",
+    selectId: "ME",
+    name: "Mechanical Engineering(ME)",
+  },
 ];
 
 
@@ -70,6 +75,66 @@ export const TEACHERS = [
       image: "https://randomuser.me/api/portraits/women/4.jpg"
   }
 ];
+
+
+export const ChatNotificationDetails = [
+  {
+    
+      id: 1,
+      name: "John",
+      image: "https://randomuser.me/api/portraits/women/4.jpg",
+      message:"Hey, Teacher! I've been wondering about the concept of parallel universes. Is there any scientific basis behind the idea, or is it purely theoretical?"
+  
+  },
+  {
+    
+      id: 2,
+      name: "Rahul",
+      image: "https://randomuser.me/api/portraits/women/4.jpg",
+      message:"Hey, Teacher! I've been wondering about the concept of parallel universes. Is there any scientific basis behind the idea, or is it purely theoretical?"
+  
+  },
+  {
+    
+      id: 3,
+      name: "Priya",
+      image: "https://randomuser.me/api/portraits/women/4.jpg",
+      message:"Hey, Teacher! I've been wondering about the concept of parallel universes. Is there any scientific basis behind the idea, or is it purely theoretical?"
+  
+  },
+  {
+    
+      id: 4,
+      name: "Raaj",
+      image: "https://randomuser.me/api/portraits/women/4.jpg",
+      message:"Hey, Teacher! I've been wondering about the concept of parallel universes. Is there any scientific basis behind the idea, or is it purely theoretical?"
+  
+  },
+  {
+    
+      id: 5,
+      name: "Lokesh",
+      image: "https://randomuser.me/api/portraits/women/4.jpg",
+      message:"Hey, Teacher! I've been wondering about the concept of parallel universes. Is there any scientific basis behind the idea, or is it purely theoretical?"
+  
+  },
+  {
+    
+      id: 6,
+      name: "Shivam",
+      image: "https://randomuser.me/api/portraits/women/4.jpg",
+      message:"Hey, Teacher! I've been wondering about the concept of parallel universes. Is there any scientific basis behind the idea, or is it purely theoretical?"
+  
+  },
+  {
+    
+      id: 7,
+      name: "Riya",
+      image: "https://randomuser.me/api/portraits/women/4.jpg",
+      message:"Hey, Teacher! I've been wondering about the concept of parallel universes. Is there any scientific basis behind the idea, or is it purely theoretical?"
+  
+  },
+]
 
 
 export const LT_INFO=[

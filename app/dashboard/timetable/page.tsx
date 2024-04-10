@@ -1,13 +1,22 @@
 
-
+"use client";
 
 
 import DepartmentCard from "@/components/DepartmentCard";
 import { TeachersDepartment } from "@/lib/data";
+import { useContext } from "react";
+import { AuthContext } from "@/providers/AuthProvider";
+import { useRouter } from "next/navigation";
 
 
 export default function Dashboard() {
 
+  const {id} = useContext(AuthContext);
+  const router = useRouter();
+
+if(id === ""){
+  router.push("/signin")
+}
   
   return (
     <main className="p-4 max-sm:pb-20">

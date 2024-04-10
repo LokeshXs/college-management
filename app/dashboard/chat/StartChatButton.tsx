@@ -14,7 +14,7 @@ const router = useRouter();
     <Button onClick={()=>{
       if(sessionId !== ""){
 
-        router.push(`chat/${sessionId}`)
+        router.push(`${sessionId}`)
       }
     }}>
       Start Chat

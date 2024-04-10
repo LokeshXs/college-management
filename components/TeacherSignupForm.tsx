@@ -65,7 +65,7 @@ export default function TeacherSignupForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4  ">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 text-primary ">
         <FormField
           control={form.control}
           name="username"
@@ -122,7 +122,7 @@ export default function TeacherSignupForm() {
                   <SelectTrigger id="department">
                     <SelectValue placeholder="Select Department" />
                   </SelectTrigger>
-                  <SelectContent position="popper">
+                  <SelectContent position="popper" className="text-primary">
                     {TeachersDepartment.map((depObj) => (
                       <SelectItem value={depObj.selectId} key={depObj.id}>
                         {depObj.name}
