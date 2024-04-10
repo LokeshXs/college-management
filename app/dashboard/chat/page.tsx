@@ -16,9 +16,9 @@ export default function ChatPage() {
 
   if(role === "TEACHER"){
   return (
-    <main className="p-4 pt-12 max-md:pb-20 max-sm:space-y-6 flex flex-col gap-4 items-center justify-center ">
-      <div className="flex flex-col items-center gap-12">
-        <h1 className="text-5xl max-sm:text-3xl font-bold">
+    <main className="p-4 pt-12 max-sm:pt-6 max-md:pb-20 max-sm:space-y-6 flex flex-col gap-4 items-center justify-center ">
+      <div className="flex flex-col items-center gap-12 max-sm:gap-6">
+        <h1 className="text-5xl max-sm:text-3xl font-bold text-primary">
          Chat Notifications
         </h1>
 
