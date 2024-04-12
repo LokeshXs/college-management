@@ -12,9 +12,18 @@ import {addHours} from 'date-fns'
 import {startOfHour} from 'date-fns'
 import 'react-big-calendar/lib/addons/dragAndDrop/styles.css'
 import 'react-big-calendar/lib/css/react-big-calendar.css'
+import { useContext } from 'react';
+import { AuthContext } from '@/providers/AuthProvider';
+import { Switch } from '@/components/ui/switch';
+import { Label } from '@/components/ui/label';
+
+
 
 const App: FC = () => {
-  const [events, setEvents] = useState<Event[]>([
+
+  const {role} = useContext(AuthContext);
+
+  const timetableEvents = [
     {
       title: 'Busy',
       start:new Date(2024, 3, 1),
@@ -35,7 +44,8 @@ const App: FC = () => {
       start:new Date(2024, 3, 12),
       end:new Date(2024, 3, 12),
     },
-  ])
+  ]
+  const [events, setEvents] = useState<Event[]>(timetableEvents);
 
   const [view,setView] = useState<View>("month");
 
@@ -57,7 +67,20 @@ const App: FC = () => {
 
   return (
     <main className='overflow-x-scroll p-4 max-sm:pb-20 bg-white'>
-<div className='min-w-[600px] w-full '>
+
+     
+        {role === "TEACHER" && <div className="flex items-center space-x-2 border-2 border-primary w-fit px-6 max-sm:px-4 py-2  rounded-2xl">
+      <Switch id="airplane-mode" defaultChecked onCheckedChange={(value)=>{
+        if(value){
+          setEvents(timetableEvents);
+        }else{
+          setEvents([]);
+        }
+      }} />
+      <Label htmlFor="airplane-mode" className='text-primary text-base max-sm:text-sm'>Set to unavailable</Label>
+    </div> }
+     
+<div className='min-w-[600px] w-full mt-4 '>
 
     <DnDCalendar
       defaultView={view}

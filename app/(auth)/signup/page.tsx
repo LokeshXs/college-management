@@ -8,10 +8,7 @@ export default function Signup() {
     <main className="min-h-screen flex items-center justify-center  p-6 max-sm:px-2 pt-20  m-auto">
       <section className="max-w-[1400px]  w-full flex items-center gap-12 max-xl:flex-col-reverse">
         <article className="flex-1 text-lg leading-relaxed max-sm:text-base text-muted-foreground ">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa quod
-          eum nihil quam, incidunt praesentium ad dolorem placeat provident
-          expedita nemo dolor dolore cupiditate harum tempore sit iure totam.
-          Laboriosam.
+        As a student or teacher. You&apos;re just moments away from accessing a world of academic resources and collaboration opportunities. Sign up now to unlock your personalized account and streamline your educational experience.
         </article>
         <div className="flex-[2] flex flex-col items-center gap-12  ">
           <div className="flex flex-col items-center gap-20 max-sm:gap-8 bg-muted px-12 max-lg:px-8 py-20 max-sm:py-12  rounded-2xl ">

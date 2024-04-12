@@ -5,14 +5,14 @@ export const AccountTypes = [
   {
     id: "acc1",
     type: "Teacher",
-    description: "loremdjkasjdklasjhdas",
+    description: "Create teacher account",
     image: "/teachersignup.png",
     link: "/signup/teacher",
   },
   {
     id: "acc2",
     type: "Student",
-    description: "loremdjkasjdklasjhdas",
+    description: "Create student account",
     image: "/studentsignup.png",
     link: "/signup/student",
   },
