@@ -22,32 +22,32 @@ export const TeachersDepartment = [
   {
     id: "dep1",
     selectId: "CSE",
-    name: "Computer Science(CSE)",
+    name: "Computer Science (CSE)",
   },
   {
     id: "dep2",
     selectId: "ECE",
-    name: "Electronic and Communication(ECE)",
+    name: "Electronic and Communication (ECE)",
   },
   {
     id: "dep3",
     selectId: "HSS",
-    name: "Humanities and Social Science(HSS)",
+    name: "Humanities and Social Science (HSS)",
   },
   {
     id: "dep4",
     selectId: "MTH",
-    name: "Mathematics(MTH)",
+    name: "Mathematics (MTH)",
   },
   {
     id: "dep5",
     selectId: "PHY",
-    name: "Physics(PHY)",
+    name: "Physics (PHY)",
   },
   {
     id: "dep6",
     selectId: "ME",
-    name: "Mechanical Engineering(ME)",
+    name: "Mechanical Engineering (ME)",
   },
 ];
 
